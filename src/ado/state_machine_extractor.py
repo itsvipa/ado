@@ -122,7 +122,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                     "Resource": "arn:aws:states:::batch:submitJob.sync",
                     "Parameters": {
                         "JobDefinition": job_definition,
-                        "JobName": key,
+                        "JobName": "myjob",
                         "JobQueue": job_queue,
                         "ContainerOverrides": {
                             "command": ["garcon-activity-local","-i","flow","-c","Flow","run", key]
@@ -143,7 +143,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                         "Resource": "arn:aws:states:::batch:submitJob.sync",
                         "Parameters": {
                             "JobDefinition": job_definition,
-                            "JobName": branch,
+                            "JobName": "myjob",
                             "JobQueue": job_queue,
                             "ContainerOverrides": {
                                 "command": ["garcon-activity-local","-i","flow","-c","Flow","run", branch]
@@ -170,7 +170,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                     "Resource": "arn:aws:states:::batch:submitJob.sync",
                     "Parameters": {
                         "JobDefinition": job_definition,
-                        "JobName": key,
+                        "JobName": "myjob",
                         "JobQueue": job_queue,
                         "ContainerOverrides": {
                             "command": ["garcon-activity-local","-i","flow","-c","Flow","run", key]
@@ -191,7 +191,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                         "Resource": "arn:aws:states:::batch:submitJob.sync",
                         "Parameters": {
                             "JobDefinition": job_definition,
-                            "JobName": branch,
+                            "JobName": "myjob",
                             "JobQueue": job_queue,
                             "ContainerOverrides": {
                                 "command": ["garcon-activity-local","-i","flow","-c","Flow","run", branch]
