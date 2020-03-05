@@ -125,7 +125,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                         "JobName": key,
                         "JobQueue": job_queue,
                         "ContainerOverrides": {
-                            "command": ["garcon-activity-local -i flow -c Flow run {}".format(key)]
+                            "command": ["garcon-activity-local","-i","flow","-c","Flow","run", key]
                             }
                         },
                     "End": True
@@ -146,7 +146,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                             "JobName": branch,
                             "JobQueue": job_queue,
                             "ContainerOverrides": {
-                                "command": ["garcon-activity-local -i flow -c Flow run {}".format(branch)]
+                                "command": ["garcon-activity-local","-i","flow","-c","Flow","run", branch]
                             }
                             },
                         "End": True
@@ -173,7 +173,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                         "JobName": key,
                         "JobQueue": job_queue,
                         "ContainerOverrides": {
-                            "command": ["garcon-activity-local -i flow -c Flow run {}".format(key)]
+                            "command": ["garcon-activity-local","-i","flow","-c","Flow","run", key]
                             }
                         },
                     "Next": next_key
@@ -194,7 +194,7 @@ def get_state_machine(dependencies, source_flow, sfn_name, aws_account):
                             "JobName": branch,
                             "JobQueue": job_queue,
                             "ContainerOverrides": {
-                                "command": ["garcon-activity-local -i flow -c Flow run {}".format(branch)]
+                                "command": ["garcon-activity-local","-i","flow","-c","Flow","run", branch]
                             }
                             },
                         "End": True
